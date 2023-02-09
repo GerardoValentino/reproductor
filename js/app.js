@@ -92,3 +92,19 @@ forwardBtn.addEventListener('click', () => {
     setMusic(currentmusic)
     playMusic()
 })
+
+backwardBtn.addEventListener('click', () => {
+    if(currentmusic <= 0) {
+        currentmusic = songs.length - 1
+    } else {
+        currentmusic--
+    }
+    setMusic(currentmusic)
+    playMusic()
+})
+
+const playMusic = () => {
+    music.play()
+    playBtn.classList.remove('pause')
+    disk.classList.add('play')
+}
