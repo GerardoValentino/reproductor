@@ -16,7 +16,7 @@ body {
 .music-player {
     width: 350px;
     height: 650px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(193, 41, 92, 0.772);
     border-radius: 20px;
     box-shadow: 0 40px 100px rgba(255, 255, 255, 0.1);
     padding: 30px;
@@ -32,7 +32,7 @@ h1 {
 .music-name, .artist-name {
     text-align: center;
     text-transform: capitalize;
-    color: maroon;
+    color: rgb(199, 227, 231);
 }
 
 .music-name{
@@ -84,7 +84,7 @@ h1 {
     width: 100%;
     height: 10px;
     border-radius: 10px;
-    background-color: red;
+    background-color: black;
     overflow: hidden;
     cursor: pointer;
 }
@@ -92,7 +92,7 @@ h1 {
 .seek-bar::-webkit-slider-thumb{
     width: 1px;
     height: 20px;
-    box-shadow: -400px 0 0 400px #d5eebb;
+    box-shadow: -400px 0 0 400px rgb(35, 137, 185);
 }
 
 .current-time, .song-duration{
@@ -134,4 +134,57 @@ h1 {
     background-color: #5f7a61;
     transition: 0.5s;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.play-btn span:nth-child(2){
+    left: 55%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2){
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1){
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause{
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse{
+    0% {
+        box-shadow: 0;
+    }
+    50% {
+        box-shadow: 0 0 0 5px black;
+    }
+    100% {
+        box-shadow: 0 0 0 5px black;
+    }
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    background-color: #5ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
